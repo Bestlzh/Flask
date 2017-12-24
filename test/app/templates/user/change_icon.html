@@ -1,0 +1,10 @@
+{% extends 'common/base.html' %}
+{% block title %}修改头像{% endblock %}
+{% block page_content %}
+       <div class="col-md-3">
+            {{ wtf.quick_form(form) }}
+       </div>
+    <img src="{{ url_for('static',filename = 'upload/'+current_user.icon) }}" alt="" style="width: 64px;height: 64px">
+
+
+{% endblock %}

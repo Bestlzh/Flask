@@ -1,0 +1,24 @@
+{% extends 'common/base.html' %}
+{% block title %}商品列表{% endblock %}
+{% block page_content %}
+    <p>商品列表</p>
+    <br>
+    {% for good in goods %}
+<div class="media">
+            <div class="media-left">
+      <img class="media-object"style="width: 64px; height: 64px;" src="{{ url_for('static',filename='img/'+ good.icon) }}" alt="...">
+
+  </div>
+  <div class="media-body">
+      <a href="{{ url_for('goods.goodinfo',gid = good.id) }}">
+            <h4 class="media-heading">商品名称:{{ good.goodname }}</h4>
+      </a>
+      <p>点击量{{ good.viemcount }}次</p>
+    <h4 class="media-heading">价格:{{ good.goodprice }}元</h4>
+  </div>
+
+</div>
+    {% endfor %}
+
+
+{% endblock %}
